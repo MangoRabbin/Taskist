@@ -389,50 +389,50 @@ class _DetailPageState extends State<DetailPage> {
                 fit: BoxFit.cover,
                 image: new AssetImage('assets/list.png')
             ),
-        RaisedButton(
-          elevation: 3.0,
-          onPressed: () {
-            pickerColor = currentColor;
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: const Text('Pick a color!'),
-                  content: SingleChildScrollView(
-                    child: ColorPicker(
-                      pickerColor: pickerColor,
-                      onColorChanged: changeColor,
-                      enableLabel: true,
-                      colorPickerWidth: 1000.0,
-                      pickerAreaHeightPercent: 0.7,
-                    ),
-                  ),
-                  actions: <Widget>[
-                    FlatButton(
-                      child: Text('Got it'),
-                      onPressed: () {
+        // RaisedButton(
+        //   elevation: 3.0,
+        //   onPressed: () {
+        //     pickerColor = currentColor;
+        //     showDialog(
+        //       context: context,
+        //       builder: (BuildContext context) {
+        //         return AlertDialog(
+        //           title: const Text('Pick a color!'),
+        //           content: SingleChildScrollView(
+        //             child: ColorPicker(
+        //               pickerColor: pickerColor,
+        //               onColorChanged: changeColor,
+        //               enableLabel: true,
+        //               colorPickerWidth: 1000.0,
+        //               pickerAreaHeightPercent: 0.7,
+        //             ),
+        //           ),
+        //           actions: <Widget>[
+        //             FlatButton(
+        //               child: Text('Got it'),
+        //               onPressed: () {
 
-                        Firestore.instance
-                            .collection(widget.user.uid)
-                            .document(
-                            widget.currentList.keys.elementAt(widget.i))
-                            .updateData(
-                            {"color": pickerColor.value.toString()});
+        //                 Firestore.instance
+        //                     .collection(widget.user.uid)
+        //                     .document(
+        //                     widget.currentList.keys.elementAt(widget.i))
+        //                     .updateData(
+        //                     {"color": pickerColor.value.toString()});
 
-                        setState(
-                                () => currentColor = pickerColor);
-                        Navigator.of(context).pop();
-                      },
-                    ),
-                  ],
-                );
-              },
-            );
-          },
-          child: Text('Color'),
-          color: currentColor,
-          textColor: const Color(0xffffffff),
-        ),
+        //                 setState(
+        //                         () => currentColor = pickerColor);
+        //                 Navigator.of(context).pop();
+        //               },
+        //             ),
+        //           ],
+        //         );
+        //       },
+        //     );
+        //   },
+        //   child: Text('Color'),
+        //   color: currentColor,
+        //   textColor: const Color(0xffffffff),
+        // ),
         GestureDetector(
           onTap: () {
             Navigator.of(context).pop();

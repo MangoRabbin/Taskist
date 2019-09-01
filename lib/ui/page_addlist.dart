@@ -193,37 +193,37 @@ class _NewTaskPageState extends State<NewTaskPage> {
                           new Padding(
                             padding: EdgeInsets.only(bottom: 10.0),
                           ),
-                          ButtonTheme(
-                            minWidth: double.infinity,
-                            child: RaisedButton(
-                              elevation: 3.0,
-                              onPressed: () {
-                                pickerColor = currentColor;
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return AlertDialog(
-                                      title: const Text('Pick a color!'),
-                                      content: SingleChildScrollView(
-                                        child: ColorPicker(
-                                          pickerColor: pickerColor,
-                                          onColorChanged: changeColor,
-                                          enableLabel: true,
-                                          colorPickerWidth: 1000.0,
-                                          pickerAreaHeightPercent: 0.7,
-                                        ),
-                                      ),
-                                      actions: <Widget>[
-                                        FlatButton(
-                                          child: Text('Got it'),
-                                          onPressed: () {
-                                            setState(() =>
-                                                currentColor = pickerColor);
-                                            Navigator.of(context).pop();
-                                          },
-                                        ),
-                                      ],
-                                    );
+                          // ButtonTheme(
+                          //   minWidth: double.infinity,
+                          //   child: RaisedButton(
+                          //     elevation: 3.0,
+                          //     onPressed: () {
+                          //       pickerColor = currentColor;
+                          //       showDialog(
+                          //         context: context,
+                          //         builder: (BuildContext context) {
+                          //           return AlertDialog(
+                          //             title: const Text('Pick a color!'),
+                          //             content: SingleChildScrollView(
+                          //               child: ColorPicker(
+                          //                 pickerColor: pickerColor,
+                          //                 onColorChanged: changeColor,
+                          //                 enableLabel: true,
+                          //                 colorPickerWidth: 1000.0,
+                          //                 pickerAreaHeightPercent: 0.7,
+                          //               ),
+                          //             ),
+                          //             actions: <Widget>[
+                          //               FlatButton(
+                          //                 child: Text('Got it'),
+                          //                 onPressed: () {
+                          //                   setState(() =>
+                          //                       currentColor = pickerColor);
+                          //                   Navigator.of(context).pop();
+                          //                 },
+                          //               ),
+                          //             ],
+                          //           );
                                   },
                                 );
                               },
